@@ -1,98 +1,80 @@
-/* ================= CUSTOM FONT ================= */
+/* ===============================
+   PIXEL FONT
+=============================== */
 @font-face {
-  font-family: "Pixel";
+  font-family: "PixelFont";
   src: url("./fonts/pixel.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-/* ================= THEME ================= */
-:root {
-  --bg1: #020617;
-  --bg2: #0f172a;
-  --green: #22c55e;
-  --green-glow: rgba(34,197,94,.6);
-}
-
+/* ===============================
+   RESET + GLOBAL FONT
+=============================== */
 * {
   box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
 body {
   margin: 0;
-  height: 100vh;
-  background: radial-gradient(circle at top, #1e293b, var(--bg1));
+  min-height: 100vh;
+  background: #020617;
+  color: #e5e7eb;
+
+  /* 👇 บังคับใช้ฟอนต์ pixel */
+  font-family: "PixelFont", "Kanit", system-ui, sans-serif;
+
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
-
-  /* ฟอนต์หลัก */
-  font-family: "Kanit", system-ui, -apple-system, sans-serif;
+  align-items: center;
 }
 
-/* ================= CONTAINER ================= */
+/* ===============================
+   LAYOUT
+=============================== */
 .container {
-  background: linear-gradient(180deg, var(--bg2), #020617);
-  padding: 48px 36px;
-  border-radius: 24px;
   text-align: center;
-  box-shadow:
-    0 30px 80px rgba(0,0,0,.8),
-    inset 0 0 0 1px rgba(255,255,255,.05);
   max-width: 420px;
-  width: 92%;
+  padding: 32px;
 }
 
-/* ================= TITLE ================= */
+/* ===============================
+   TEXT
+=============================== */
 h1 {
-  margin: 0 0 12px;
   font-size: 32px;
-  letter-spacing: 1px;
-  font-weight: 800;
-
-  /* ฟอนต์ Pixel */
-  font-family: "Pixel", "Kanit", sans-serif;
+  margin-bottom: 16px;
 }
 
-/* ================= TEXT ================= */
 p {
-  margin: 0 0 36px;
-  opacity: .85;
-  line-height: 1.6;
+  line-height: 1.8;
+  margin-bottom: 24px;
 }
 
-/* ================= BUTTON ================= */
+.small {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 20px;
+}
+
+/* ===============================
+   BUTTON
+=============================== */
 .open-btn {
-  display: block;
-  padding: 26px 20px;
-  font-size: 22px;
-  font-weight: 800;
-  background: linear-gradient(180deg, #4ade80, #16a34a);
-  color: #022c22;
+  display: inline-block;
+  padding: 18px 32px;
+  font-size: 18px;
   text-decoration: none;
-  border-radius: 18px;
-  box-shadow:
-    0 0 40px var(--green-glow),
-    0 18px 40px rgba(0,0,0,.6);
-  transition: all .18s ease;
-}
 
-.open-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow:
-    0 0 60px var(--green-glow),
-    0 28px 60px rgba(0,0,0,.8);
+  background: #22c55e;
+  color: #020617;
+
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+  transition: transform 0.1s ease;
 }
 
 .open-btn:active {
-  transform: scale(.97);
-}
-
-/* ================= FOOT NOTE ================= */
-.small {
-  margin-top: 24px;
-  font-size: 14px;
-  opacity: .6;
+  transform: scale(0.95);
 }
